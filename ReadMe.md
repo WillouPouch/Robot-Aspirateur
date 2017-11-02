@@ -80,32 +80,32 @@ Le cycle de vie de l’agent est une boucle infinie qui se déroule comme suit :
 ### Modélisation des actions
 
 ##### Action “Ramasser Bijou”
-Prémisses : <return>
-	Case contenant un bijou<return>
-	Robot positionné sur cette case<return>
-Conséquences :<return>
-	Bijou ramassé<return>
-	Case vidée<return>
+* Prémisses :
+	* Case contenant un bijou
+	* Robot positionné sur cette case
+* Conséquences :
+	* Bijou ramassé
+	* Case vidée
 	
 ##### Action “Aspirer Poussière”
-Prémisses: <return>
-	Case contenant une poussière<return>
-	Robot positionné sur cette case<return>
-Conséquences :<return>
-	Poussière aspirée<return>
-	Case vidée<return>
+* Prémisses: 
+	* Case contenant une poussière
+	* Robot positionné sur cette case
+* Conséquences :
+	* Poussière aspirée
+	* Case vidée
 
 ##### Action “Se déplacer” (Haut, Bas, Gauche, Droite)
-Prémisses:<return>
-	Case suivante sur la carte<return>
-Conséquences :<return>
-	Déplacement du robot d’une case<return>
+* Prémisses:
+	* Case suivante sur la carte
+* Conséquences :
+	* Déplacement du robot d’une case
 	
 ##### Action “Ne Rien Faire”
-Prémisses :<return>
-	Toutes les cases de la carte sont vides<return>
-Conséquences :<return>
-	Le robot attend<return>
+* Prémisses :
+	* Toutes les cases de la carte sont vides
+* Conséquences :
+	* Le robot attend
 
 
 ### Modélisation de la perception
