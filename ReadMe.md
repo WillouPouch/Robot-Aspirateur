@@ -79,31 +79,32 @@ Le cycle de vie de l’agent est une boucle infinie qui se déroule comme suit :
 
 ### Modélisation des actions
 
-###### Action “Ramasser Bijou”
+##### Action “Ramasser Bijou”
 Prémisses : 
 	Case contenant un bijou
-Robot positionné sur cette case
+	Robot positionné sur cette case
 Conséquences :
 	Bijou ramassé
 	Case vidée
 	
-###### Action “Aspirer Poussière”
-		Prémisses:
-			Case contenant une poussière
-			Robot positionné sur cette case
-	Conséquences :
+##### Action “Aspirer Poussière”
+Prémisses: 
+	Case contenant une poussière
+	Robot positionné sur cette case
+Conséquences :
 	Poussière aspirée
 	Case vidée
 
-###### Action “Se déplacer” (Haut, Bas, Gauche, Droite)
-		Prémisses:
-			Case suivante sur la carte
-		Conséquences :
+##### Action “Se déplacer” (Haut, Bas, Gauche, Droite)
+Prémisses:
+	Case suivante sur la carte
+Conséquences :
 	Déplacement du robot d’une case
-###### Action “Ne Rien Faire”
-		Prémisses :
-			Toutes les cases de la carte sont vides
-	Conséquences :
+	
+##### Action “Ne Rien Faire”
+Prémisses :
+	Toutes les cases de la carte sont vides
+Conséquences :
 	Le robot attend
 
 
@@ -123,7 +124,7 @@ Intentions : l’agent possède une liste d’actions à effectuer pour arriver 
 
 Nous avons choisi de mettre en place une exploration Breadth-First Search (recherche en largeur) pour notre exploration non informée.
 
-###### Étapes de notre algorithme d’exploration non informée :
+##### Étapes de notre algorithme d’exploration non informée :
 
 * Création d’un noeud racine contenant la position du robot
 * Création d’un file (FIFO) contenant les noeuds voisins
@@ -141,7 +142,7 @@ Nous avons choisi de mettre en place une exploration Best-First Search pour notr
 
 La distance de Manhattan correspond à la distance parcourue entre deux points sur un quadrillage. Elle se calcule avec la formule: M = xA - xB + yA - yB.
 
-###### Étapes de notre algorithme d’exploration:
+##### Étapes de notre algorithme d’exploration:
 
 Création d’un noeud racine contenant la position du robot
 
@@ -158,13 +159,13 @@ L’agent perd un point s’il aspire un bijou par erreur
 
 La mesure de performance s’effectue à chaque fois que 10 actions de nettoyage ont été réalisées par l’agent.
 
-###### Notions utilisées:
+##### Notions utilisées:
 * Rapport de performance = Nombre de points / Quantité d’électricité dépensée
 * Pourcentage d’exploration = Pourcentages des intentions du robot réalisées avant de re-évaluer son environnement. Il effectue 100% de ses intentions au départ.
 * Progression d’exploration  = Quantité des actions réalisées par le robot avant de re-évaluer son environnement. Il est calculé en multipliant le pourcentage d’exploration avec le nombre total d’intentions.
 * Précision de performance = Pourcentage variable permettant d’affiner le rapport de performance. Elle influe sur le pourcentage d’exploration. Elle commence à 10%.
 
-###### Étapes de la mesure de performance:
+##### Étapes de la mesure de performance:
 * On vérifie que le robot a réalisé 10 actions de nettoyage
 	* Si c’est le cas, on calcul le rapport de performance
 	* On associe le rapport de performance à un pourcentage d’exploration (100% au début) et on l’ajoute dans un tableau qui garde en mémoire les deux derniers rapports de performance
@@ -173,10 +174,10 @@ La mesure de performance s’effectue à chaque fois que 10 actions de nettoyage
 	* Le cas où le rapport est moins bon que le précédent. Dans ce cas, on augmente le pourcentage d’exploration d’une précision calculée (précision de performance)
 * En fonction du nombre d’actions déterminées par l’agent pour arriver au but, on calcule la quantité d’actions qu’il effectuera en multipliant le nombre d’actions par le pourcentage d’exploration déterminé plus tôt.
 
-###### Exemple :
+##### Exemple :
 Au départ, le robot effectue 10 actions de nettoyage à 100%. Il compare son rapport de performance au précédent et le trouve meilleur. Il baisse donc son pourcentage d’exploration de 10% ; de ce fait, lors de sa prochaine exploration, il effectuera 90% de ses actions. Si la prochaine exploration indique 8 actions à effectuer, il en réalisera alors 8*0.9  7 avant de ré-observer son environnement.
 
-###### Cas particuliers :
+##### Cas particuliers :
 Si le robot trouve 3 actions ou moins à réaliser lors de son exploration, même s’il trouve un meilleur rapport, il effectuera tout de même 100% de ses intentions afin d’éviter les boucles
 Nous avons également mis en place une variable permettant d’améliorer au fur et à mesure la précision du pourcentage d’exploration, plutôt que de l’augmenter ou de le diminuer de 10% à chaque fois.
 
