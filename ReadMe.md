@@ -80,32 +80,32 @@ Le cycle de vie de l’agent est une boucle infinie qui se déroule comme suit :
 ### Modélisation des actions
 
 ##### Action “Ramasser Bijou”
-Prémisses : 
-	Case contenant un bijou
-	Robot positionné sur cette case
-Conséquences :
-	Bijou ramassé
-	Case vidée
+Prémisses : <return>
+	Case contenant un bijou<return>
+	Robot positionné sur cette case<return>
+Conséquences :<return>
+	Bijou ramassé<return>
+	Case vidée<return>
 	
 ##### Action “Aspirer Poussière”
-Prémisses: 
-	Case contenant une poussière
-	Robot positionné sur cette case
-Conséquences :
-	Poussière aspirée
-	Case vidée
+Prémisses: <return>
+	Case contenant une poussière<return>
+	Robot positionné sur cette case<return>
+Conséquences :<return>
+	Poussière aspirée<return>
+	Case vidée<return>
 
 ##### Action “Se déplacer” (Haut, Bas, Gauche, Droite)
-Prémisses:
-	Case suivante sur la carte
-Conséquences :
-	Déplacement du robot d’une case
+Prémisses:<return>
+	Case suivante sur la carte<return>
+Conséquences :<return>
+	Déplacement du robot d’une case<return>
 	
 ##### Action “Ne Rien Faire”
-Prémisses :
-	Toutes les cases de la carte sont vides
-Conséquences :
-	Le robot attend
+Prémisses :<return>
+	Toutes les cases de la carte sont vides<return>
+Conséquences :<return>
+	Le robot attend<return>
 
 
 ### Modélisation de la perception
@@ -181,6 +181,7 @@ Au départ, le robot effectue 10 actions de nettoyage à 100%. Il compare son ra
 Si le robot trouve 3 actions ou moins à réaliser lors de son exploration, même s’il trouve un meilleur rapport, il effectuera tout de même 100% de ses intentions afin d’éviter les boucles
 Nous avons également mis en place une variable permettant d’améliorer au fur et à mesure la précision du pourcentage d’exploration, plutôt que de l’augmenter ou de le diminuer de 10% à chaque fois.
 
+##### Amélioration :
 Pour l’amélioration de la précision du pourcentage d’exploration, nous utilisons un booléen correspondant au sens de parcours du tableau. Ce booléen change à chaque changement de sens, c’est-à-dire à chaque fois qu’on varie entre rapport meilleur et rapport moins bon. Si le sens a changé, alors la précision du pourcentage d’exploration sera diminuée par 2. Ainsi, une progression du pourcentage d’exploration pourrait être : 100% - 90%-  80%-  85% - 82,5% - 83,75% - ... .
 
 
