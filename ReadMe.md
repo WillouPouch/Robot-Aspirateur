@@ -1,3 +1,12 @@
+## README
+
+Auteurs: Esmé James & Wilfried Pouchous
+
+Lancer le programme:
+* Télécharger
+* Dézipper
+* Lancer 
+
 
 ## Organisation des fichiers du projet
 
