@@ -5,7 +5,8 @@ Auteurs: Esmé James & Wilfried Pouchous
 Lancer le programme:
 * Télécharger
 * Dézipper
-* Lancer 
+* Ouvrir "RobotAspirateur.vcxproj" avec Visual Studio
+* Lancer en Debug
 
 
 ## Organisation des fichiers du projet
