@@ -194,7 +194,7 @@ Si le robot trouve 3 actions ou moins à réaliser lors de son exploration, mêm
 Nous avons également mis en place une variable permettant d’améliorer au fur et à mesure la précision du pourcentage d’exploration, plutôt que de l’augmenter ou de le diminuer de 10% à chaque fois.
 
 ##### Amélioration :
-Pour l’amélioration de la précision du pourcentage d’exploration, nous utilisons un booléen correspondant au sens de parcours du tableau. Ce booléen change à chaque changement de sens, c’est-à-dire à chaque fois qu’on varie entre rapport meilleur et rapport moins bon. Si le sens a changé, alors la précision du pourcentage d’exploration sera diminuée par 2. Ainsi, une progression du pourcentage d’exploration pourrait être : 100% - 90%-  80%-  85% - 82,5% - 83,75% - ... .
+Pour l’amélioration de la précision du pourcentage d’exploration, nous utilisons un booléen correspondant au sens de parcours du tableau. Ce booléen change à chaque changement de sens, c’est-à-dire à chaque fois qu’on varie entre rapport meilleur et rapport moins bon. Si le sens a changé, alors la précision du pourcentage d’exploration sera diminuée par 2. Ainsi, une progression du pourcentage d’exploration pourrait être : 100% - 90% - 80% - 85% - 82,5% - 83,75% - ... .
 
 
 
